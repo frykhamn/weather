@@ -51,6 +51,7 @@ export const useWeather = () => {
       retry: false,
     }
   );
+  //console.log(data)
 
   return {
     weather: data ?? null,

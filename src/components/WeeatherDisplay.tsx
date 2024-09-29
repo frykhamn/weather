@@ -3,7 +3,7 @@ import { useWeatherContext } from "../context/WeatherContext";
 
 const WeatherDisplay = () => {
   const { weather } = useWeatherContext();
-
+console.log(weather)
   return (
     <div className="card-wrapper">
       <div className="card">

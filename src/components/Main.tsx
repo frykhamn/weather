@@ -5,7 +5,7 @@ import Location from "./Location";
 import WeatherDisplay from "./WeeatherDisplay";
 
 export const Main = () => {
-  const { location, loading, error } = useWeatherContext();
+  const { loading, error } = useWeatherContext();
 
   if (loading) {
     return (
