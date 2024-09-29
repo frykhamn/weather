@@ -105,19 +105,6 @@ Applikationen kommer att vara tillgänglig på `http://localhost:3000` i din web
    - **Klädförslag**: Ger rekommendationer om lämpliga kläder baserat på vädret.
 5. **Laddningsindikator**: Visar en spinner medan data laddas, och hanterar fel om något går snett.
 
-## Möjliga Förbättringar
-
-- **Caching av Data**: Implementera caching för att minska antalet API-anrop och förbättra prestanda.
-- **Responsiv Design**: Förbättra layouten för att se bra ut på olika skärmstorlekar.
-- **Fler Språk**: Lägg till stöd för flera språk utöver svenska.
-- **Utökad Felhantering**: Hantera fler felscenarier, såsom nätverksfel eller ogiltiga API-svar.
-
-## Lärdomar och Erfarenheter
-
-- **Integrering av API:er**: Erfarenhet av att arbeta med externa API:er och hantera asynkrona anrop.
-- **State Management**: Användning av React Context API för att hantera globalt tillstånd.
-- **Användarupplevelse**: Förståelse för vikten av laddningsindikatorer och felhantering för en bättre UX.
-- **TypeScript**: Förbättrad kodkvalitet och underhållbarhet genom statisk typning.
 
 ## Licens
 

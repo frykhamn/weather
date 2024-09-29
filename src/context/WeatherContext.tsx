@@ -5,10 +5,11 @@ import { useWeather } from '../hooks/useWeather';
 interface WeatherContextProps {
   temperature: number | null;
   condition: string | null;
-  location: string | null; // Lägg till plats i contextet
+  location: string | null;
   loading: boolean;
   error: string | null;
 }
+
 
 const WeatherContext = createContext<WeatherContextProps | undefined>(undefined);
 
@@ -16,7 +17,7 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
   const { weather, error, loading } = useWeather();
   const [temperature, setTemperature] = useState<number | null>(null);
   const [condition, setCondition] = useState<string | null>(null);
-  const [location, setLocation] = useState<string | null>(null); // Lägg till state för plats
+  const [location, setLocation] = useState<string | null>(null);
 
   useEffect(() => {
     if (weather) {

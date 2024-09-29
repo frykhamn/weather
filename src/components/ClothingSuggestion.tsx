@@ -8,6 +8,12 @@ const ClothingSuggestion: React.FC = () => {
     const validCondition = condition ?? '';
     const suggestions = useClothingSuggestions(validTemperature, validCondition);
 
+
+
+  if (temperature === null || condition === null) {
+    return <p>Klädförslag ej tillgängligt</p>;
+  }
+
     return (
             <div className='clothes'>
                 {suggestions.map((icon, index) => (
