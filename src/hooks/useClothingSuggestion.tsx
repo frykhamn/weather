@@ -1,36 +1,43 @@
-// src/hooks/useClothingSuggestions.ts
-import { useMemo } from "react";
-import { FaUmbrella, FaTshirt, FaRegSnowflake } from "react-icons/fa"; // FontAwesome ikoner
-import { GiWinterGloves, GiShorts, GiTrousers } from "react-icons/gi"; // Game Icons ikoner
+// src/components/ClothingSuggestion.tsx
 
-export const useClothingSuggestions = (temperature: number, condition: string) => {
-  const suggestions = useMemo(() => {
-    const icons: JSX.Element[] = [];
+import { useWeatherContext } from '../context/WeatherContext';
+import { FaRegSnowflake, FaTshirt } from 'react-icons/fa';
+import {
+  GiWinterGloves,
+  GiWinterHat,
+  GiTrousers,
+  GiShorts,
+  GiSunglasses,
+  GiFlipFlops,
+  GiSun,
+} from 'react-icons/gi';
 
-    // Kläder baserade på temperaturintervall
-    if (temperature < -10) {
-      icons.push(<FaRegSnowflake />, <GiWinterGloves />); // Vinterkläder
-    } else if (temperature < 0) {
-      icons.push(<GiWinterGloves />, <FaTshirt />); // Vinterjacka och tröja
-    } else if (temperature < 10) {
-      icons.push(<FaTshirt />, <GiTrousers />); // Jacka och byxor
-    } else if (temperature < 20) {
-      icons.push(<FaTshirt />, <GiTrousers />); // T-shirt och byxor
-    } else if (temperature < 30) {
-      icons.push(<FaTshirt />, <GiShorts />); // T-shirt och shorts
-    } else if (temperature <= 55) {
-      icons.push(<GiShorts />, <FaTshirt />); // Shorts och T-shirt
-    } else {
-      icons.push(<FaTshirt />); // För exceptionella temperaturer
-    }
+export const useClothingSuggestion = (temperature: number): JSX.Element[] => {
+  let icons: JSX.Element[] = [];
 
-    // Lägg till paraply om det regnar
-    if (condition.toLowerCase().includes("rain")) {
-      icons.push(<FaUmbrella />);
-    }
+  if (temperature <= -10) {
+    icons.push(<FaRegSnowflake key="snowflake" />, <GiWinterGloves key="gloves" />, <GiWinterHat key="hat" />, <GiTrousers key="trousers" />);
+  } else if (temperature <= -5) {
+    icons.push(<FaRegSnowflake key="snowflake" />, <GiWinterGloves key="gloves" />, <GiWinterHat key="hat" />, <GiTrousers key="trousers" />);
+  } else if (temperature <= 0) {
+    icons.push(<GiWinterGloves key="gloves" />, <GiTrousers key="trousers" />);
+  } else if (temperature <= 5) {
+    icons.push(<GiWinterGloves key="gloves" />, <GiTrousers key="trousers" />, <FaTshirt key="tshirt" />);
+  } else if (temperature <= 10) {
+    icons.push(<FaTshirt key="tshirt" />, <GiTrousers key="trousers" />);
+  } else if (temperature <= 15) {
+    icons.push(<FaTshirt key="tshirt" />, <GiTrousers key="trousers" />);
+  } else if (temperature <= 20) {
+    icons.push(<FaTshirt key="tshirt" />, <GiTrousers key="trousers" />);
+  } else if (temperature <= 25) {
+    icons.push(<FaTshirt key="tshirt" />, <GiShorts key="shorts" />, <GiSunglasses key="sunglasses" />);
+  } else if (temperature <= 30) {
+    icons.push(<FaTshirt key="tshirt" />, <GiShorts key="shorts" />, <GiSunglasses key="sunglasses" />);
+  } else if (temperature <= 35) {
+    icons.push(<FaTshirt key="tshirt" />, <GiShorts key="shorts" />, <GiSunglasses key="sunglasses" />, <GiFlipFlops key="flipflops" />);
+  } else {
+    icons.push(<GiShorts key="shorts" />, <FaTshirt key="tshirt" />, <GiSunglasses key="sunglasses" />, <GiFlipFlops key="flipflops" />, <GiSun key="sun" />);
+  }
 
-    return icons;
-  }, [temperature, condition]);
-
-  return suggestions;
+  return icons;
 };

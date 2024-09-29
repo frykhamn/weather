@@ -1,13 +1,11 @@
 import { useWeatherContext } from '../context/WeatherContext';
-import { useClothingSuggestions } from '../hooks/useClothingSuggestion';
+import { useClothingSuggestion } from '../hooks/useClothingSuggestion';
 
 
 const ClothingSuggestion: React.FC = () => {
-    const { temperature, condition } = useWeatherContext();
-    const validTemperature = temperature ?? 0;
-    const validCondition = condition ?? '';
-    const suggestions = useClothingSuggestions(validTemperature, validCondition);
-
+    const { weather } = useWeatherContext();
+    const { temperature, condition } = weather ?? {};
+    const suggestions = useClothingSuggestion(temperature ?? 0);
 
 
   if (temperature === null || condition === null) {
