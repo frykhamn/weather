@@ -129,14 +129,3 @@ Applikationen kommer att vara tillgänglig på `http://localhost:3000` i din web
 ## Licens
 
 Detta projekt är licensierat under MIT-licensen.
-
-## Kontakt
-
-- **Namn**: Ditt Namn
-- **E-post**: din.email@example.com
-- **Portfolio**: [din-portfolio-webbplats.com](https://din-portfolio-webbplats.com)
-- **GitHub**: [github.com/ditt-användarnamn](https://github.com/ditt-användarnamn)
-
----
-
-*Om du har några frågor eller förslag, tveka inte att kontakta mig.*
