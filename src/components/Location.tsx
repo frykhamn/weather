@@ -4,9 +4,9 @@ import { useWeatherContext } from "../context/WeatherContext";
 import { trimLocation } from "../utils/trimLocation";
 
 const Location: React.FC = () => {
-  const { location } = useWeatherContext();
+  const { weather } = useWeatherContext();
 
-  const trimmedLocation = location ? trimLocation(location) : 'Plats skanas';
+  const trimmedLocation = weather?.location ? trimLocation(weather.location) : 'Plats skanas';
 
 
   return (

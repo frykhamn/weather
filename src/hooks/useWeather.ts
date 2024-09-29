@@ -53,7 +53,7 @@ export const useWeather = () => {
   );
 
   return {
-    weather: data,
+    weather: data ?? null,
     error: error ? error.message : null,
     loading: isLoading,
   };
