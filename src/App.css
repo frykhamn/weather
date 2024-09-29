@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+:root {
+  /* Font */
+  --font-primary: "Gowun Batang", sans-serif;
+
+  /* Primary Colors */
+  --color-primary-blue: #dffff4; /* Neon blå */
+
+  /* Secondary Colors */
+  --color-secondary: #612c6d; /* Corall */
+
+  /* Accent Colors */
+  --color-accent: #215233; /* Violett */
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+header {
+  display: flex;
+  align-items: left;
+  padding-left: 1rem;
+}
+h1 {
+  color: var(--color-secondary);
+}
+
+.wrapper {
+  background-color: var(--color-primary-blue);
+  padding: 20px;
+  border: var(--color-secondary) 4px solid;
+  border-radius: 2%;
+  min-width: 334.85px;
+}
+
+.location {
+  display: flex;
+  justify-content: right;
+  margin: 0;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.clothes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.clothes span {
+  font-size: 3rem;
+}
