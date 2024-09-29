@@ -8,22 +8,28 @@ export interface WeatherResponse {
     temp: number;
   };
   weather: {
-    description: string;
+    main: string;
   }[];
   name: string;
 }
 
-export const fetchWeather = async (
-  latitude: number,
-  longitude: number
-): Promise<WeatherResponse> => {
+export const fetchWeather = async ( latitude: number,longitude: number): Promise<WeatherResponse> => {
   if (!API_KEY) {
     throw new Error("Weather API key is missing");
   }
   try {
     const response = await axios.get<WeatherResponse>(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
+      "https://api.openweathermap.org/data/2.5/weather",
+      {
+        params: {
+          lat: latitude,
+          lon: longitude,
+          appid: API_KEY,
+          units: "metric",
+        },
+      }
     );
+    
     return response.data;
   } catch (error) {
     console.error("Error fetching weather data:", error);
