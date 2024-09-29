@@ -16,19 +16,12 @@ En React-baserad webbapplikation som hämtar aktuell väderinformation baserat p
 - **TypeScript**: För typkontroll och förbättrad kodkvalitet.
 - **React Hooks**: För hantering av komponenttillstånd och livscykler.
 - **Context API**: För global tillståndshantering av väderdata.
+- **React Query**: För hämtning av data och hantering av caching.
 - **Geolocation API**: För att hämta användarens geografiska position.
 - **OpenWeatherMap API**: För att hämta aktuell väderinformation.
+- **Axios**: För att göra HTTP-anrop till väder-API:et.
 - **CSS**: För styling av applikationen.
 
-## Använda Bibliotek
-
-- **react**: Kärnbiblioteket för att bygga användargränssnitt.
-- **react-dom**: För DOM-specifika metoder.
-- **react-scripts**: För att köra och bygga applikationen.
-- **react-spinners**: För att visa laddningsindikatorer (spinner).
-- **react-loading-skeleton**: För att visa skelettkomponenter under laddning (om implementerat).
-- **TypeScript**: För statisk typning i JavaScript.
-- **axios** eller **fetch API**: För att göra HTTP-anrop till väder-API:et.
 
 ## Installation och Körning Lokalt
 
